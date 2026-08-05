@@ -3,166 +3,735 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kestrel.work</title>
-<script data-goatcounter="https://toby.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<title>Menu of Choice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --black: #1a1a18;
-    --white: #ffffff;
-    --warm-gray: #9a9690;
-    --line: rgba(26,26,24,0.1);
-    --f: 'DM Serif Display', Georgia, serif;
+  :root{
+    --bg:#FFFFFF;
+    --ink:#000000;
+    --ink-dim:#000000;
+    --ink-faint:#000000;
+    --line:#000000;
+    --accent:#1E3A5F;
+    --serif: 'Roboto', sans-serif;
+    --grotesk: 'Roboto', sans-serif;
+    --mono: 'Roboto', sans-serif;
   }
-  html { scroll-behavior: smooth; }
-  body { background: var(--white); color: var(--black); font-family: var(--f); line-height: 1.7; font-size: 16px; }
-  .grid-wrap { max-width: 1200px; margin: 0 auto; padding: 4vh 5vw 8vh; }
-  .grid-row { display: grid; gap: 20px; margin-bottom: 20px; }
-  .grid-row.three { grid-template-columns: repeat(3, 1fr); }
-  .grid-row.two   { grid-template-columns: repeat(2, 1fr); }
-  .card { border: 2.5px solid var(--black); border-radius: 12px; padding: 2.5rem 2.5rem 3rem; }
-  .card ul { padding-left: 1.4rem; list-style: disc; }
-  .card ul li { font-family: var(--f); font-size: 16px; line-height: 1.85; color: #444; margin-bottom: 0.4rem; }
-  .card-body { font-family: var(--f); font-size: 16px; line-height: 1.85; color: #444; }
-  h2.card-title { font-family: var(--f); font-size: 52px; font-weight: 700; margin-bottom: 1.4rem; color: var(--black); line-height: 1.05; }
-  footer { padding: 2rem 5vw; border-top: 1px solid var(--line); font-family: var(--f); font-size: 12px; color: var(--warm-gray); }
-  .cta-btn { display: inline-flex; align-items: center; gap: 7px; padding: 12px 22px; border-radius: 8px; font-family: var(--f); font-size: 14px; text-decoration: none; white-space: nowrap; }
-  @media (max-width: 768px) {
-    .grid-row.three, .grid-row.two { grid-template-columns: 1fr; }
-    h2.card-title { font-size: 32px; }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:#FFFFFF;
+    color:#000000;
+    font-family:var(--serif);
+    line-height:1.6;
+  }
+
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:64px 24px 120px;
+  }
+
+  .epigraph-attr{
+    display:block;
+    text-align:right;
+    margin-top:16px;
+    margin-bottom:40px;
+    font-family:var(--mono);
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+
+  h1{
+    font-family:var(--grotesk);
+    font-weight:700;
+    font-size:clamp(28px, 3.6vw, 38px);
+    line-height:1.35;
+    color:#000000;
+    max-width:34ch;
+  }
+
+  .lede-list{
+    margin-top:24px;
+    margin-bottom:40px;
+    list-style:none;
+    display:grid;
+    gap:0;
+    max-width:60ch;
+  }
+  .lede-list li{
+    position:relative;
+    padding-left:18px;
+    font-size:16px;
+    color:#000000;
+  }
+  .lede-list li::before{
+    content:"-";
+    position:absolute;
+    left:0;
+    color:#000000;
+  }
+
+  .lede strong{
+    color:#000000;
+    font-weight:700;
+  }
+
+  .hero-rule{
+    margin-top:40px;
+    height:1px;
+    background:#000000;
+  }
+
+  .menu-label{
+    font-family:var(--grotesk);
+    font-weight:700;
+    font-size:clamp(36px, 4vw, 46px);
+    letter-spacing:-0.01em;
+    text-transform:none;
+    text-align:left;
+    color:#000000;
+    margin:0 0 16px;
+  }
+
+  .offer{
+    padding:16px 0;
+  }
+  .offer:first-of-type{
+    padding-top:0;
+  }
+  .offer:last-of-type{
+    padding-bottom:0;
+  }
+
+  .offer-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+
+  .offer-index{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:#000000;
+    margin-bottom:8px;
+    display:block;
+  }
+
+  .offer-name{
+    font-family:var(--grotesk);
+    font-weight:700;
+    font-size:clamp(29px, 2.6vw, 33px);
+    color:var(--accent);
+  }
+
+  .offer-tagline{
+    margin-top:8px;
+    font-size:15px;
+    font-style:italic;
+    color:#000000;
+    max-width:56ch;
+  }
+
+  .offer-insight-list{
+    margin-top:16px;
+    list-style:none;
+    display:grid;
+    gap:8px;
+    max-width:56ch;
+  }
+  .offer-insight-list li{
+    position:relative;
+    padding-left:16px;
+    font-size:15px;
+    color:#000000;
+  }
+  .offer-insight-list li::before{
+    content:"-";
+    position:absolute;
+    left:0;
+    color:#000000;
+  }
+
+  .marker{
+    flex:0 0 auto;
+    width:28px;
+    height:28px;
+    border-radius:0;
+    border:1px solid #000000;
+    background:#FFFFFF;
+    color:#000000;
+    cursor:pointer;
+    position:relative;
+  }
+  .marker:focus-visible{
+    outline:2px solid #000000;
+    outline-offset:3px;
+  }
+  .marker::before,
+  .marker::after{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    background:#000000;
+  }
+  .marker::before{
+    width:10px; height:1px;
+    transform:translate(-50%,-50%);
+  }
+  .marker::after{
+    width:1px; height:10px;
+    transform:translate(-50%,-50%);
+  }
+  .offer.open .marker{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#FFFFFF;
+  }
+  .offer.open .marker::before,
+  .offer.open .marker::after{
+    background:#FFFFFF;
+  }
+  .offer.open .marker::after{
+    transform:translate(-50%,-50%) scaleY(0);
+  }
+
+  .leader{display:none;}
+
+  .panel{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .25s ease;
+  }
+  .offer.open .panel{
+    grid-template-rows:1fr;
+  }
+  .panel-inner{
+    overflow:hidden;
+  }
+
+  .spec{
+    padding:4px 0 4px 0;
+    margin-top:24px;
+    display:grid;
+    gap:24px;
+  }
+
+  .spec-block-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#000000;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+
+  .sub-accordion{
+  }
+
+  .sub-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    background:none;
+    border:none;
+    padding:0;
+    margin:0;
+    cursor:pointer;
+    text-align:left;
+    font-family:inherit;
+  }
+  .sub-toggle .spec-block-label{
+    display:inline-block;
+    margin-bottom:0;
+    border:1px solid #000000;
+    padding:6px 10px;
+  }
+  .sub-toggle:focus-visible{
+    outline:2px solid #000000;
+    outline-offset:3px;
+  }
+
+  .sub-marker{
+    flex:0 0 auto;
+    width:20px;
+    height:20px;
+    border-radius:0;
+    border:1px solid #000000;
+    background:#FFFFFF;
+    color:#000000;
+    position:relative;
+  }
+  .sub-marker::before,
+  .sub-marker::after{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    background:#000000;
+  }
+  .sub-marker::before{
+    width:8px; height:1px;
+    transform:translate(-50%,-50%);
+  }
+  .sub-marker::after{
+    width:1px; height:8px;
+    transform:translate(-50%,-50%);
+  }
+  .sub-accordion.open .sub-marker{
+    background:#000000;
+  }
+  .sub-accordion.open .sub-marker::before,
+  .sub-accordion.open .sub-marker::after{
+    background:#FFFFFF;
+  }
+  .sub-accordion.open .sub-marker::after{
+    transform:translate(-50%,-50%) scaleY(0);
+  }
+
+  .sub-panel{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .3s ease;
+  }
+  .sub-accordion.open .sub-panel{
+    grid-template-rows:1fr;
+  }
+  .sub-panel-inner{
+    overflow:hidden;
+  }
+  .sub-accordion.open .sub-panel-inner{
+    padding-top:16px;
+  }
+
+  .spec-block p, .spec-block li{
+    font-size:15px;
+    color:#000000;
+  }
+
+  .spec-block ul{
+    list-style:none;
+    display:grid;
+    gap:8px;
+  }
+  .spec-block li{
+    position:relative;
+    padding-left:16px;
+  }
+  .spec-block li::before{
+    content:"-";
+    position:absolute;
+    left:0;
+    color:#000000;
+  }
+
+  .spec-block .example{
+    padding:8px 0;
+    margin-bottom:0;
+  }
+  .spec-block .example:first-of-type{
+    padding-top:0;
+  }
+
+  .examples-bridge{
+    font-size:15px;
+    color:#000000;
+    margin-bottom:4px;
+  }
+  .spec-block .example p{
+    color:#000000;
+    font-size:14.5px;
+  }
+
+  .pricing-figure{
+    font-family:var(--mono);
+    color:#000000;
+    font-weight:700;
+    font-size:15px;
+    margin-bottom:8px;
+    display:block;
+  }
+
+  .bio-list{
+    margin-top:8px;
+    list-style:none;
+    display:grid;
+    gap:8px;
+    max-width:60ch;
+  }
+  .bio-list li{
+    position:relative;
+    padding-left:18px;
+    font-size:15px;
+    color:#000000;
+  }
+  .bio-list li::before{
+    content:"-";
+    position:absolute;
+    left:0;
+    color:#000000;
+  }
+
+  @media (max-width:600px){
+    .wrap{padding:48px 24px 96px;}
+    .offer-head{gap:12px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
   }
 </style>
 </head>
 <body>
 
-<!-- LOGO BAR -->
-<div style="padding: 3vh 5vw; background: #ffffff;">
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-end; align-items: center;">
-    <img src="https://kestrel.work/images/kestrel.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Kestrel.work" style="height: 110px; width: auto; display: block;">
-    <span style="display:none; font-family: var(--f); font-size: 1.4rem; letter-spacing: -0.02em; color: var(--black);">Kestrel.work</span>
-  </div>
+<div class="wrap">
+
+  <h1>"No daring is fatal. The whole logic of the universe is contained in daring."</h1>
+  <div class="epigraph-attr">René Crevel</div>
+
+  <ul class="lede-list">
+    <li>Are you and your organisation really connecting AI with human agency?</li>
+    <li>We aren't competing for what you give your attention to. We're here to develop <em>how</em> you do it.</li>
+    <li>Waiting has a cost too. It just doesn't send an invoice.</li>
+    <li>Here are three options to help your thinking, your teams, and organisations.</li>
+  </ul>
+
+  <!-- OFFER 1 -->
+  <div class="menu-label">For your team</div>
+  <section class="offer" id="offer-2">
+    <div class="offer-head">
+      <div>
+        <h2 class="offer-name">Mediated Team Cognitive Coaching</h2>
+        <p class="offer-tagline">Give your team individual coaching, share the findings, revolutionise the way you work.</p>
+      </div>
+      <button class="marker" aria-expanded="false" aria-controls="panel-2" onclick="toggleOffer(this)"></button>
+    </div>
+
+    <div class="leader"></div>
+
+    <div class="panel" id="panel-2">
+      <div class="panel-inner">
+        <div class="spec">
+
+          <div class="spec-block sub-accordion open">
+            <button class="sub-toggle" aria-expanded="true" onclick="toggleSub(this)">
+              <span class="spec-block-label">Insight</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <ul class="offer-insight-list">
+                  <li>Appraisals and leadership programs only capture what people are willing to say formally.</li>
+                  <li>The real signal sits underneath.</li>
+                  <li>Short-form coaching, enhanced by AI, surfaces it.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">What you get</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <ul>
+                  <li>Coaching calls for the designated team, at a cadence that suits them</li>
+                  <li>Patterns and approaches made visible from the sessions, mediated back to the team</li>
+                  <li>A clear, systemic, data-backed report showing challenges and solutions, feeding directly into strategic goals</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Who it's for</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <p>Teams who want real feedback on strategy. Who want tension and bottlenecks addressed. Who want to move better.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Examples</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <div class="example">
+                  <p>Two fintech organisations: turned dozens of coaching conversations into board-legible numbers, trust gaps, time-management overload, restructuring anxiety, and a precise list of what leadership was missing.</p>
+                </div>
+                <div class="example">
+                  <p>A 30-year-old professional services partnership: diagnosed a generational leadership gap and a fear-of-delegation pattern among senior partners directly from coaching-session data. Recommended a scoped, time-boxed intervention rather than a blanket program.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Pricing logic</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <span class="pricing-figure">$10,000 / month (team of 5)</span>
+                <p>Free discovery call. Typically runs 6 months, with monthly insight reports included. Scope and length are negotiable.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER 3 -->
+  <div class="menu-label">For you</div>
+  <section class="offer" id="offer-1">
+    <div class="offer-head">
+      <div>
+        <h2 class="offer-name">AI Enhanced Coaching</h2>
+        <p class="offer-tagline">Get coaching that enhances your own thinking architecture, engaging the latest in AI in the experience.</p>
+      </div>
+      <button class="marker" aria-expanded="false" aria-controls="panel-1" onclick="toggleOffer(this)"></button>
+    </div>
+
+    <div class="leader"></div>
+
+    <div class="panel" id="panel-1">
+      <div class="panel-inner">
+        <div class="spec">
+
+          <div class="spec-block sub-accordion open">
+            <button class="sub-toggle" aria-expanded="true" onclick="toggleSub(this)">
+              <span class="spec-block-label">Insight</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <ul class="offer-insight-list">
+                  <li>It's a tech-rich world. Sometimes our habits haven't caught up, even when you're already running at a level most people don't reach.</li>
+                  <li>Cognitive coaching plus AI closes the gap.</li>
+                  <li>Put the tools and insight to work for you.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">What you get</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <ul>
+                  <li>Micro-coaching that fits your week: 15 minutes, or longer. We'll find the right fit on one call.</li>
+                  <li>Powerful insights delivered after the call as audio, text, or video.</li>
+                  <li>Custom tools, shaped for exactly how you work, built together with you as coaching progresses</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Who it's for</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <p>Leaders who want to make their systems as sharp as they are.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Examples</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <div class="example">
+                  <p>A business owner running several ventures at once, each with its own reporting, its own rhythm, held together by memory and habit. Rebuilt his systems around how he actually thinks. Two custom trackers, built in hours, replaced weeks of manual work.</p>
+                </div>
+                <div class="example">
+                  <p>A CEO mid-crisis: frozen accounts, volatile leadership above him, a colleague's job on the line. Solved the operational problem in days, then used the session to decide what mattered next: who to align with, how long to stay.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Pricing logic</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <span class="pricing-figure">$2,500 / month</span>
+                <p>Free 30-minute intro call. Standard engagement: 6 months. Typically a day together up front, then 2 hours a month plus insight reports.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER 2 -->
+  <section class="offer" id="offer-3">
+    <div class="offer-head">
+      <div>
+        <h2 class="offer-name">Personalised AI Researcher &amp; Consultant</h2>
+        <p class="offer-tagline">Keeps you ahead of AI, without you doing the tracking.</p>
+      </div>
+      <button class="marker" aria-expanded="false" aria-controls="panel-3" onclick="toggleOffer(this)"></button>
+    </div>
+
+    <div class="leader"></div>
+
+    <div class="panel" id="panel-3">
+      <div class="panel-inner">
+        <div class="spec">
+
+          <div class="spec-block sub-accordion open">
+            <button class="sub-toggle" aria-expanded="true" onclick="toggleSub(this)">
+              <span class="spec-block-label">Insight</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <ul class="offer-insight-list">
+                  <li>Keeping up with AI is a full-time job most leaders don't have time for.</li>
+                  <li>Some ignore it. Some chase the hype.</li>
+                  <li>This delivers research and insight, at your pace, built around what actually matters to you.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">What you get</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <ul>
+                  <li>Insight into what actually matters to your business, at a cadence you set</li>
+                  <li>Research and synthesis handled entirely. You stay current without doing the work</li>
+                  <li>Delivered how you want it: podcast, video, or a straight call</li>
+                  <li>Custom AI tools built when a real use case emerges, transparent from day one</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Who it's for</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <p>Leaders who want to stay ahead of AI, without doing the tracking themselves.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Examples</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <div class="example">
+                  <p>An ongoing technical exchange with the founder of a comparable AI-driven leadership tool, benchmarking system design, methodology, and where the technology is actually heading. Delivered as a monthly two-hour call exploring available tools and insight, alongside regular conversations in chat relay pertaining to specific systems architecture.</p>
+                </div>
+                <div class="example">
+                  <p>Three sessions with a CEO, exploring AI data offers and informing a live technology decision. Included ongoing support for his own learning across various commercial GPT tools.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-block sub-accordion">
+            <button class="sub-toggle" aria-expanded="false" onclick="toggleSub(this)">
+              <span class="spec-block-label">Pricing logic</span>
+              <span class="sub-marker"></span>
+            </button>
+            <div class="sub-panel">
+              <div class="sub-panel-inner">
+                <span class="pricing-figure">$1,500 / month retainer</span>
+                <p>Includes up to two hours a month, plus research and insight between calls. Project fees apply on top when a tool actually gets built, scoped to the deliverable.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer" id="offer-about">
+    <div class="offer-head">
+      <div>
+        <h2 class="offer-name">About</h2>
+      </div>
+      <button class="marker" aria-expanded="false" aria-controls="panel-about" onclick="toggleOffer(this)"></button>
+    </div>
+
+    <div class="leader"></div>
+
+    <div class="panel" id="panel-about">
+      <div class="panel-inner">
+        <div class="spec">
+          <ul class="bio-list">
+            <li>20+ years as "Consigliere" for 4 CEO's (references on request)</li>
+            <li>Head of Intelligence for an Eastern European SAAS company, deployed in challenging environments</li>
+            <li>Background in psychology, and a highly experienced cognitive coach</li>
+            <li>Think Alfred Pennyworth, Batman's butler: UK based, loves a challenge, gets things done with discretion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<!-- HERO -->
-<div style="background: #1a1a18; padding: 12vh 5vw;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h1 style="font-family: var(--f); font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.25; letter-spacing: -0.02em; color: #ffffff;">
-      Most organisations have more intelligence than they're using.<br><br>
-      <em style="font-style: italic; opacity: 0.75;">Let's fix it.</em>
-    </h1>
-  </div>
-</div>
+<script>
+function toggleOffer(btn){
+  const offer = btn.closest('.offer');
+  const isOpen = offer.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
 
-<!-- PROBLEM CARDS -->
-<div class="grid-wrap">
-  <div class="grid-row two" style="margin-bottom: 32px;">
-
-    <div class="card" style="background: #f7f6f4;">
-      <h2 class="card-title">&#10060; Fragmented data</h2>
-      <ul>
-        <li>Your reports, surveys, SOPs, playbooks. It's all there.</li>
-        <li>Your leadership conversations carry insight that never gets captured.</li>
-        <li>Your strategy is documented. Your OKRs are set. Your PRs are filed.</li>
-        <li>Are your teams accessing your best data?</li>
-      </ul>
-    </div>
-
-    <div class="card" style="background: #f7f6f4;">
-      <h2 class="card-title">&#10060; More tools won't fix it</h2>
-      <ul>
-        <li>Every new platform adds another layer to manage.</li>
-        <li>AI tools built for scale don't fit how your people actually work.</li>
-        <li>The gap isn't technology. It's the connection between technology and the humans using it.</li>
-      </ul>
-      <p class="card-body" style="margin-top: 1rem; font-style: italic;">Start with people, their vision, their values, their way of working, and the whole system moves with them.</p>
-    </div>
-
-  </div>
-
-  <!-- APPROACH BANNER -->
-  <div style="background: #1a1a18; border-radius: 12px; padding: 6vh 3rem; margin-bottom: 20px;">
-    <p style="font-family: var(--f); font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; color: #ffffff;">
-      There is a better approach.
-    </p>
-  </div>
-
-  <!-- THREE LOWER CARDS -->
-  <div class="grid-row three">
-
-    <div class="card">
-      <h2 class="card-title"><span style="color:#22a84a">&#10003;</span> What I do</h2>
-      <p class="card-body" style="margin-bottom: 0.8rem;">I work with leadership teams who know something isn't connecting and need to understand exactly what, and why. I map where intelligence breaks down in your organisation, and build the systems, human and technical, that reconnect it.</p>
-      <ul>
-        <li>Diagnostic work: where is the intelligence gap?</li>
-        <li>AI integration that fits your people and your processes.</li>
-        <li>Change that sticks because it starts with how your teams actually think.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2 class="card-title"><span style="color:#22a84a">&#10003;</span> Who this is for</h2>
-      <ul>
-        <li>Leaders who can see their organisation has more potential than its current systems release.</li>
-        <li>Teams navigating AI adoption without wanting to lose what makes them human.</li>
-        <li>Organisations that have tried new tools but haven't seen the shift they expected.</li>
-        <li>Anyone who wants to understand what AI can actually do for their specific context, not a generic answer.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2 class="card-title"><span style="color:#22a84a">&#10003;</span> What shifts</h2>
-      <p class="card-body" style="margin-bottom: 0.8rem;">When the intelligence in your organisation is properly connected:</p>
-      <ul>
-        <li>The data you already own starts doing real work.</li>
-        <li>Your teams make faster, clearer, better-informed decisions.</li>
-        <li>AI amplifies human judgment. It doesn't replace it.</li>
-        <li>You see measurable ROI from processes, not just from platforms.</li>
-        <li>Leadership has the clarity to act, not just to analyse.</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- ABOUT -->
-<div style="background: #f7f6f4; padding: 10vh 5vw;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <p style="font-family: var(--f); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 400; line-height: 1.5; letter-spacing: -0.01em; color: var(--black);">
-      I'm Toby. I've spent years at the intersection of SaaS, AI, and executive coaching, watching organisations invest in intelligence they never fully use.
-    </p>
-    <p style="font-family: var(--f); font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 1.5rem;">
-      Kestrel.work exists because the gap between what organisations know and what they do with that knowledge is one of the most costly problems in modern leadership. I build the diagnostic frameworks and integrated systems that close it, starting with the people at the top.
-    </p>
-  </div>
-</div>
-
-<!-- CTA -->
-<div style="background: #1a1a18; padding: 12vh 5vw; text-align: center;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="font-family: var(--f); font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; color: #ffffff; margin-bottom: 1rem;">
-      Let's find out where your intelligence gap is.
-    </h2>
-    <p style="font-family: var(--f); font-size: 1.1rem; color: rgba(255,255,255,0.6); margin-bottom: 3rem;">A conversation costs nothing. A diagnostic changes everything.</p>
-    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-      <a href="https://www.linkedin.com/in/tobycann/" target="_blank" rel="noopener" class="cta-btn" style="background: #0A66C2; color: #fff;">
-        Connect with Toby on LinkedIn
-      </a>
-      <a href="https://kestrelwork.substack.com/" target="_blank" rel="noopener" class="cta-btn" style="background: #FF6719; color: #fff;">
-        Follow our thinking on Substack
-      </a>
-      <a href="https://api.whatsapp.com/send/?phone=447822034241" target="_blank" rel="noopener" class="cta-btn" style="background: #25D366; color: #fff;">
-        Speak to us on WhatsApp
-      </a>
-      <a href="mailto:toby@kestrel.work" class="cta-btn" style="background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3);">
-        Email us
-      </a>
-    </div>
-  </div>
-</div>
-
-<footer>&copy; 2026 Kestrel.work</footer>
+function toggleSub(btn){
+  const block = btn.closest('.sub-accordion');
+  const isOpen = block.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+</script>
 
 </body>
 </html>
