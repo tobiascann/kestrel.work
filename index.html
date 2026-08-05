@@ -8,15 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FFFFFF;
-    --ink:#000000;
-    --ink-dim:#000000;
-    --ink-faint:#000000;
-    --line:#000000;
+    --bg:#F6F4EF;
+    --ink:#17171A;
+    --ink-muted:#6B6A64;
+    --ink-faint:#9C9B94;
+    --line:#E2DFD6;
     --accent:#1E3A5F;
-    --serif: 'Roboto', sans-serif;
-    --grotesk: 'Roboto', sans-serif;
-    --mono: 'Roboto', sans-serif;
+    --font: 'Roboto', sans-serif;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -24,14 +22,14 @@
   html{scroll-behavior:smooth;}
 
   body{
-    background:#FFFFFF;
-    color:#000000;
-    font-family:var(--serif);
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font);
     line-height:1.6;
   }
 
   .wrap{
-    max-width:920px;
+    max-width:800px;
     margin:0 auto;
     padding:64px 40px 120px;
   }
@@ -41,67 +39,46 @@
     text-align:right;
     margin-top:16px;
     margin-bottom:40px;
-    font-family:var(--mono);
-    font-style:normal;
-    font-size:12px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
+    font-size:14px;
+    color:var(--ink-muted);
   }
 
   h1{
-    font-family:var(--grotesk);
     font-weight:700;
     font-size:clamp(28px, 3.6vw, 38px);
     line-height:1.35;
-    color:#000000;
+    color:var(--ink);
     max-width:34ch;
   }
 
   .lede-list{
     margin-top:24px;
-    margin-bottom:40px;
+    margin-bottom:48px;
     list-style:none;
     display:grid;
-    gap:0;
-    max-width:74ch;
+    gap:10px;
+    max-width:60ch;
   }
   .lede-list li{
-    position:relative;
-    padding-left:18px;
     font-size:16px;
-    color:#000000;
+    color:var(--ink-muted);
   }
-  .lede-list li::before{
-    content:"-";
-    position:absolute;
-    left:0;
-    color:#000000;
-  }
-
-  .lede strong{
-    color:#000000;
-    font-weight:700;
-  }
-
-  .hero-rule{
-    margin-top:40px;
-    height:1px;
-    background:#000000;
+  .lede-list li:last-child{
+    color:var(--ink);
+    font-weight:500;
   }
 
   .menu-label{
-    font-family:var(--grotesk);
     font-weight:700;
-    font-size:clamp(36px, 4vw, 46px);
-    letter-spacing:-0.01em;
-    text-transform:none;
-    text-align:left;
-    color:#000000;
-    margin:0 0 16px;
+    font-size:clamp(20px, 2.6vw, 25px);
+    color:var(--ink);
+    margin:0 0 20px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
   }
 
   .offer{
-    padding:16px 0;
+    padding:28px 0;
   }
   .offer:first-of-type{
     padding-top:0;
@@ -110,35 +87,36 @@
     padding-bottom:0;
   }
 
-  .offer-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
+  .section-divider{
+    height:1px;
+    background:var(--line);
+    margin:32px 0 12px;
   }
 
-  .offer-index{
-    font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:0.04em;
-    color:#000000;
-    margin-bottom:8px;
-    display:block;
+  .offer-head{
+    display:inline-flex;
+    align-items:center;
+    gap:20px;
+    max-width:100%;
+    cursor:pointer;
+    background:none;
+    border:none;
+    text-align:left;
+    font-family:inherit;
+    padding:0;
   }
 
   .offer-name{
-    font-family:var(--grotesk);
     font-weight:700;
-    font-size:clamp(29px, 2.6vw, 33px);
+    font-size:clamp(22px, 2.4vw, 26px);
     color:var(--accent);
   }
 
   .offer-tagline{
-    margin-top:8px;
+    margin-top:6px;
     font-size:15px;
-    font-style:italic;
-    color:#000000;
-    max-width:70ch;
+    color:var(--ink-muted);
+    max-width:65ch;
   }
 
   .offer-insight-list{
@@ -146,62 +124,39 @@
     list-style:none;
     display:grid;
     gap:8px;
-    max-width:70ch;
+    max-width:65ch;
   }
   .offer-insight-list li{
-    position:relative;
-    padding-left:16px;
     font-size:15px;
-    color:#000000;
-  }
-  .offer-insight-list li::before{
-    content:"-";
-    position:absolute;
-    left:0;
-    color:#000000;
+    color:var(--ink);
   }
 
   .marker{
     flex:0 0 auto;
-    width:28px;
-    height:28px;
-    border-radius:0;
-    border:1px solid #000000;
-    background:#FFFFFF;
-    color:#000000;
+    background:none;
+    border:none;
+    color:var(--ink-muted);
     cursor:pointer;
-    position:relative;
+    font-size:20px;
+    line-height:1;
+    padding:4px;
+    transition:transform .25s ease, color .2s ease;
+  }
+  .marker:hover{
+    color:var(--ink);
   }
   .marker:focus-visible{
-    outline:2px solid #000000;
+    outline:2px solid var(--ink);
     outline-offset:3px;
   }
-  .marker::before,
-  .marker::after{
-    content:"";
-    position:absolute;
-    top:50%; left:50%;
-    background:#000000;
-  }
   .marker::before{
-    width:10px; height:1px;
-    transform:translate(-50%,-50%);
+    content:"+";
   }
-  .marker::after{
-    width:1px; height:10px;
-    transform:translate(-50%,-50%);
+  .offer.open .marker::before{
+    content:"\2212";
   }
   .offer.open .marker{
-    background:var(--accent);
-    border-color:var(--accent);
-    color:#FFFFFF;
-  }
-  .offer.open .marker::before,
-  .offer.open .marker::after{
-    background:#FFFFFF;
-  }
-  .offer.open .marker::after{
-    transform:translate(-50%,-50%) scaleY(0);
+    color:var(--accent);
   }
 
   .leader{display:none;}
@@ -219,20 +174,15 @@
   }
 
   .spec{
-    padding:4px 0 4px 0;
     margin-top:24px;
     display:grid;
-    gap:24px;
+    gap:20px;
   }
 
   .spec-block-label{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:#000000;
+    font-size:13px;
+    color:var(--ink-muted);
     margin-bottom:8px;
-    font-weight:700;
   }
 
   .sub-accordion{
@@ -252,50 +202,30 @@
     font-family:inherit;
   }
   .sub-toggle .spec-block-label{
-    display:inline-block;
     margin-bottom:0;
-    border:1px solid #000000;
-    padding:6px 10px;
+  }
+  .sub-toggle:hover .spec-block-label{
+    color:var(--ink);
   }
   .sub-toggle:focus-visible{
-    outline:2px solid #000000;
+    outline:2px solid var(--ink);
     outline-offset:3px;
   }
 
   .sub-marker{
     flex:0 0 auto;
-    width:20px;
-    height:20px;
-    border-radius:0;
-    border:1px solid #000000;
-    background:#FFFFFF;
-    color:#000000;
-    position:relative;
-  }
-  .sub-marker::before,
-  .sub-marker::after{
-    content:"";
-    position:absolute;
-    top:50%; left:50%;
-    background:#000000;
+    color:var(--ink-faint);
+    font-size:16px;
+    line-height:1;
   }
   .sub-marker::before{
-    width:8px; height:1px;
-    transform:translate(-50%,-50%);
+    content:"+";
   }
-  .sub-marker::after{
-    width:1px; height:8px;
-    transform:translate(-50%,-50%);
+  .sub-accordion.open .sub-marker::before{
+    content:"\2212";
   }
   .sub-accordion.open .sub-marker{
-    background:#000000;
-  }
-  .sub-accordion.open .sub-marker::before,
-  .sub-accordion.open .sub-marker::after{
-    background:#FFFFFF;
-  }
-  .sub-accordion.open .sub-marker::after{
-    transform:translate(-50%,-50%) scaleY(0);
+    color:var(--accent);
   }
 
   .sub-panel{
@@ -310,12 +240,12 @@
     overflow:hidden;
   }
   .sub-accordion.open .sub-panel-inner{
-    padding-top:16px;
+    padding-top:14px;
   }
 
   .spec-block p, .spec-block li{
     font-size:15px;
-    color:#000000;
+    color:var(--ink-muted);
   }
 
   .spec-block ul{
@@ -325,39 +255,32 @@
   }
   .spec-block li{
     position:relative;
-    padding-left:16px;
+    padding-left:14px;
   }
   .spec-block li::before{
-    content:"-";
+    content:"\2013";
     position:absolute;
     left:0;
-    color:#000000;
+    color:var(--ink-faint);
   }
 
   .spec-block .example{
-    padding:8px 0;
+    padding:10px 0;
     margin-bottom:0;
   }
   .spec-block .example:first-of-type{
     padding-top:0;
   }
-
-  .examples-bridge{
-    font-size:15px;
-    color:#000000;
-    margin-bottom:4px;
-  }
   .spec-block .example p{
-    color:#000000;
+    color:var(--ink-muted);
     font-size:14.5px;
   }
 
   .pricing-figure{
-    font-family:var(--mono);
-    color:#000000;
+    color:var(--ink);
     font-weight:700;
-    font-size:15px;
-    margin-bottom:8px;
+    font-size:22px;
+    margin-bottom:6px;
     display:block;
   }
 
@@ -365,25 +288,25 @@
     margin-top:8px;
     list-style:none;
     display:grid;
-    gap:8px;
-    max-width:74ch;
+    gap:10px;
+    max-width:65ch;
   }
   .bio-list li{
     position:relative;
-    padding-left:18px;
+    padding-left:14px;
     font-size:15px;
-    color:#000000;
+    color:var(--ink-muted);
   }
   .bio-list li::before{
-    content:"-";
+    content:"\2013";
     position:absolute;
     left:0;
-    color:#000000;
+    color:var(--ink-faint);
   }
 
   @media (max-width:600px){
     .wrap{padding:48px 24px 96px;}
-    .offer-head{gap:12px;}
+    .offer-head{gap:14px;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -400,7 +323,7 @@
 
   <ul class="lede-list">
     <li>Are you and your organisation really connecting AI with human agency?</li>
-    <li>We aren't competing for what you give your attention to. We're here to develop <em>how</em> you do it.</li>
+    <li>We aren't competing for what you give your attention to. We're here to develop how you do it.</li>
     <li>Waiting has a cost too. It just doesn't send an invoice.</li>
     <li>Here are three options to help your thinking, your teams, and organisations.</li>
   </ul>
@@ -408,13 +331,13 @@
   <!-- OFFER 1 -->
   <div class="menu-label">For your team</div>
   <section class="offer" id="offer-2">
-    <div class="offer-head">
+    <button class="offer-head" aria-expanded="false" aria-controls="panel-2" onclick="toggleOffer(this)">
       <div>
         <h2 class="offer-name">Mediated Team Cognitive Coaching</h2>
         <p class="offer-tagline">Give your team individual coaching, share the findings, revolutionise the way you work.</p>
       </div>
-      <button class="marker" aria-expanded="false" aria-controls="panel-2" onclick="toggleOffer(this)"></button>
-    </div>
+      <span class="marker"></span>
+    </button>
 
     <div class="leader"></div>
 
@@ -504,13 +427,13 @@
   <!-- OFFER 3 -->
   <div class="menu-label">For you</div>
   <section class="offer" id="offer-1">
-    <div class="offer-head">
+    <button class="offer-head" aria-expanded="false" aria-controls="panel-1" onclick="toggleOffer(this)">
       <div>
         <h2 class="offer-name">AI Enhanced Coaching</h2>
         <p class="offer-tagline">Get coaching that enhances your own thinking architecture, engaging the latest in AI in the experience.</p>
       </div>
-      <button class="marker" aria-expanded="false" aria-controls="panel-1" onclick="toggleOffer(this)"></button>
-    </div>
+      <span class="marker"></span>
+    </button>
 
     <div class="leader"></div>
 
@@ -599,13 +522,13 @@
 
   <!-- OFFER 2 -->
   <section class="offer" id="offer-3">
-    <div class="offer-head">
+    <button class="offer-head" aria-expanded="false" aria-controls="panel-3" onclick="toggleOffer(this)">
       <div>
         <h2 class="offer-name">Personalised AI Researcher &amp; Consultant</h2>
         <p class="offer-tagline">Keeps you ahead of AI, without you doing the tracking.</p>
       </div>
-      <button class="marker" aria-expanded="false" aria-controls="panel-3" onclick="toggleOffer(this)"></button>
-    </div>
+      <span class="marker"></span>
+    </button>
 
     <div class="leader"></div>
 
@@ -693,13 +616,15 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <section class="offer" id="offer-about">
-    <div class="offer-head">
+    <button class="offer-head" aria-expanded="false" aria-controls="panel-about" onclick="toggleOffer(this)">
       <div>
         <h2 class="offer-name">About</h2>
       </div>
-      <button class="marker" aria-expanded="false" aria-controls="panel-about" onclick="toggleOffer(this)"></button>
-    </div>
+      <span class="marker"></span>
+    </button>
 
     <div class="leader"></div>
 
