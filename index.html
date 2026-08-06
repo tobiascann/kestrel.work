@@ -11,21 +11,27 @@
   body { margin:0; background:#040404; color:#f2f2f2; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; }
   a { color:#fff; text-decoration:none; }
   a:hover { color:#b8b8b8; }
-  .wrap { max-width:1440px; margin:0 auto; padding:0 64px; }
-  .row { display:flex; gap:80px; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 64px; }
+  .row { display:flex; gap:56px; }
   .label { width:220px; flex-shrink:0; font-size:20px; color:#fff; }
-  .content { flex:1; max-width:820px; }
+  .content { flex:1; max-width:560px; }
   .btn { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#000; padding:15px 24px; border-radius:999px; font-size:16px; font-weight:500; white-space:nowrap; border:none; cursor:pointer; }
   .toggle { font-size:16px; color:#8f8f8f; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
-  .card { display:flex; gap:80px; background:#111; border-radius:28px; padding:56px 64px; }
+  .card { display:flex; gap:56px; background:#111; border-radius:28px; padding:56px 64px; }
   .cards { display:flex; flex-direction:column; gap:24px; }
   .details { margin-top:36px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08); display:none; }
   .details.open { display:block; }
   .kicker { font-size:14px; letter-spacing:0.04em; text-transform:uppercase; color:#666; margin-bottom:10px; }
   .faq-item { display:flex; flex-direction:column; gap:12px; }
-  .faq-q { font-size:21px; color:#fff; font-weight:500; }
-  .faq-a { font-size:17px; color:#8f8f8f; line-height:1.6; }
+  .faq-q { font-size:21px; color:#fff; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .faq-arrow { font-size:20px; color:#8f8f8f; transition:transform 0.2s ease; flex-shrink:0; }
+  .faq-item.open .faq-arrow { transform:rotate(45deg); }
+  .faq-a { font-size:17px; color:#8f8f8f; line-height:1.6; display:none; }
+  .faq-item.open .faq-a { display:block; }
   footer { padding:60px 0 80px; border-top:1px solid rgba(255,255,255,0.08); display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; }
+  .pill { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.15); color:#ccc; padding:16px 22px; border-radius:999px; font-size:16px; }
+  .dot { width:7px; height:7px; border-radius:50%; background:#3ecf5e; display:inline-block; animation:blink 1.6s ease-in-out infinite; }
+  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.25; } }
 
   @media (max-width: 720px) {
     .wrap { padding:0 24px; }
@@ -50,8 +56,11 @@
       <div style="color:#767676;">London · LA · Tallinn</div>
     </div>
     <div class="content">
-      <p style="font-size:19px; line-height:1.6; color:#eaeaea; margin:0 0 40px;">With 20+ years in International Leadership, I am more recently a former of Head of Intelligence for a software/ AI neuroscience company.</p>
-      <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a call</a>
+      <p style="font-size:19px; line-height:1.6; color:#eaeaea; margin:0 0 40px;">20 years in leadership, 6 in SaaS & AI. I've coached C-suite leaders through transition & shipped software & AI tools for leadership development. Now I blend coaching & advisory to build leaders' real thinking architecture.</p>
+      <div style="display:flex; gap:12px; align-items:center;">
+        <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a call</a>
+        <span class="pill"><span class="dot"></span>Q4 2026</span>
+      </div>
     </div>
   </section>
 
@@ -202,35 +211,35 @@ This delivers research and insight, at your pace, built around what actually mat
     <div class="label">FAQ</div>
     <div class="content" style="display:flex; flex-direction:column; gap:44px;">
       <div class="faq-item">
-        <div class="faq-q">Why hire an outside perspective?</div>
-        <div class="faq-a">Inside a company every idea has history and someone attached to it. I show up with neither. I see the product the way a new user or an investor sees it, and I can say what people inside can't.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Why hire an outside perspective?<span class="faq-arrow">+</span></div>
+        <div class="faq-a">Inside a company every idea has history and someone attached to it. I show up with neither. I see solutions and challenges with a very different lens and I can see what people often can't.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Who do you work with?</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Who do you work with?<span class="faq-arrow">+</span></div>
         <div class="faq-a">Fintech, scale-ups, CEO's and public companies that need fresh perspective and want to move even faster.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How flexible are engagements?</div>
-        <div class="faq-a">Prices and timelines are fixed so you always know the costs and the dates, details of cadence, reporting and style of engagement have to be right for you and your organisation.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">How flexible are engagements?<span class="faq-arrow">+</span></div>
+        <div class="faq-a">Prices and timelines are fixed so you always know the costs and the dates. We can be flexible on details of cadence and reporting style. These have to be right for you and your organisation.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Do you do Advisory?</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Do you do Advisory?<span class="faq-arrow">+</span></div>
         <div class="faq-a">Yes I can provide support on hiring, strategy, appraisal and decision making systems.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How fast can we start?</div>
+        <div class="faq-q" onclick="toggleFaq(this)">How fast can we start?<span class="faq-arrow">+</span></div>
         <div class="faq-a">An intro call, a proposal within 48 hours, and a kickoff the following Monday.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What happens on the intro call?</div>
+        <div class="faq-q" onclick="toggleFaq(this)">What happens on the intro call?<span class="faq-arrow">+</span></div>
         <div class="faq-a">30 mins. I identify your needs, I will let you know whether I am the right person. No deck, No questionnaire, you leave knowing what I would do next.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Where are you based, and do you work remotely?</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Where are you based, and do you work remotely?<span class="faq-arrow">+</span></div>
         <div class="faq-a">I am based in the UK and frequently in LA and Tallinn. If you are in London I am always around to grab a coffee.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Why the Kestrel?</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Why the Kestrel?<span class="faq-arrow">+</span></div>
         <div class="faq-a">They are energy efficient, highly adaptive with exquisite pattern matching skills.</div>
       </div>
     </div>
@@ -244,6 +253,9 @@ This delivers research and insight, at your pace, built around what actually mat
 </div>
 
 <script>
+function toggleFaq(q) {
+  q.closest('.faq-item').classList.toggle('open');
+}
 function toggleDetails(btn) {
   const details = btn.closest('.content').querySelector('.details');
   details.classList.toggle('open');
