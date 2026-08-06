@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
-  body { margin:0; background:#040404; color:#f2f2f2; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; }
+  body { margin:0; background:#040404; color:#f2f2f2; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; overflow-x:hidden; }
   a { color:#fff; text-decoration:none; }
   a:hover { color:#b8b8b8; }
   .wrap { max-width:1120px; margin:0 auto; padding:0 64px; }
-  .row { display:flex; gap:56px; }
-  .label { width:220px; flex-shrink:0; font-size:20px; color:#fff; }
-  .content { flex:1; max-width:560px; }
+  .row { display:flex; gap:56px; min-width:0; }
+  .label { width:220px; flex-shrink:0; font-size:20px; color:#fff; min-width:0; }
+  .content { flex:1; max-width:560px; min-width:0; }
   .btn { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#000; padding:15px 24px; border-radius:999px; font-size:16px; font-weight:500; white-space:nowrap; border:none; cursor:pointer; }
   .toggle { font-size:16px; color:#8f8f8f; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
-  .card { display:flex; gap:56px; background:#111; border-radius:28px; padding:56px 64px; }
+  .card { display:flex; gap:56px; background:#111; border-radius:28px; padding:56px 64px; min-width:0; overflow:hidden; }
   .cards { display:flex; flex-direction:column; gap:24px; }
   .details { margin-top:36px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08); display:none; }
   .details.open { display:block; }
@@ -36,14 +36,15 @@
   @media (max-width: 720px) {
     .wrap { padding:0 24px; }
     .row { flex-direction:column; gap:20px; }
-    .label { width:auto; }
-    .card { flex-direction:column; gap:28px; padding:36px 24px; }
+    .label { width:auto !important; }
     .cards { margin:0 -24px; }
-    .content { max-width:100%; }
+    .card { flex-direction:column; gap:28px; padding:36px 24px; margin:0 24px; border-radius:20px; }
+    .content { max-width:100%; width:100%; }
     section.row { padding:60px 0 !important; }
     .btn { padding:14px 22px; font-size:15px; }
     .faq-q { font-size:19px; }
     div[style*="grid-template-columns:1fr 1fr"] { display:flex !important; flex-direction:column !important; gap:28px !important; }
+    div[style*="white-space:pre-line"] { white-space:normal !important; }
   }
 </style>
 </head>
@@ -74,7 +75,7 @@
   <section class="cards" style="margin:0 -64px; padding:0 0 60px;">
 
     <div class="card">
-      <div class="label" style="width:220px;">
+      <div class="label">
         <div style="font-weight:500; margin-bottom:10px;">Mediated Team Cognitive Coaching</div>
         <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$10k a month for a team of 5
 6 months engagement</div>
@@ -118,7 +119,7 @@ Short-form coaching, enhanced by AI, surfaces it.</p>
     </div>
 
     <div class="card">
-      <div class="label" style="width:220px;">
+      <div class="label">
         <div style="font-weight:500; margin-bottom:10px;">AI Enhanced Coaching</div>
         <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$2.5k a month
 6 months engagement</div>
@@ -162,7 +163,7 @@ Put the tools and insight to work for you.</p>
     </div>
 
     <div class="card">
-      <div class="label" style="width:220px;">
+      <div class="label">
         <div style="font-weight:500; margin-bottom:10px;">Personalised AI Researcher & Consultant</div>
         <div style="font-size:16px; color:#8f8f8f;">$1.5k a month</div>
       </div>
