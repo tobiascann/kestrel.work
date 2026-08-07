@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
+  html { overflow-x:hidden; }
   body { margin:0; background:#040404; color:#f2f2f2; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; overflow-x:hidden; }
   a { color:#fff; text-decoration:none; }
   a:hover { color:#b8b8b8; }
@@ -34,13 +35,14 @@
   @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.25; } }
 
   @media (max-width: 720px) {
-    .wrap { padding:0 24px; }
-    .row { flex-direction:column; gap:20px; }
+    .wrap { padding:0; }
+    footer { padding-left:24px; padding-right:24px; }
+    .row { flex-direction:column; gap:20px; padding-left:24px !important; padding-right:24px !important; }
     .label { width:auto !important; }
-    .cards { margin:0 -24px; }
-    .card { flex-direction:column; gap:28px; padding:36px 24px; margin:0 24px; border-radius:20px; }
+    .cards { margin:0 !important; }
+    .card { flex-direction:column; gap:28px; padding:36px 24px; margin:0; border-radius:20px; }
     .content { max-width:100%; width:100%; }
-    section.row { padding:60px 0 !important; }
+    section.row { padding-top:60px !important; padding-bottom:60px !important; }
     .btn { padding:14px 22px; font-size:15px; }
     .faq-q { font-size:19px; }
     div[style*="grid-template-columns:1fr 1fr"] { display:flex !important; flex-direction:column !important; gap:28px !important; }
@@ -59,7 +61,7 @@
     <div class="content">
       <p style="font-size:19px; line-height:1.6; color:#eaeaea; margin:0 0 40px; white-space:pre-line;">It's time to rebuild how we think.
 Coaching, AI and Insight: Together.</p>
-      <div style="display:flex; gap:12px; align-items:center;">
+      <div style="display:flex; gap:12px; align-items:center; justify-content:flex-start; flex-wrap:wrap;">
         <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a call</a>
         <span class="pill"><span class="dot"></span>Q4 2026</span>
       </div>
@@ -77,7 +79,7 @@ Coaching, AI and Insight: Together.</p>
       </div>
       <div class="content">
         <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">More cost-effective than executive coaching. Data-backed. Findings that go straight into strategy.</p>
-        <div style="display:flex; align-items:center; gap:20px; margin-bottom:8px;">
+        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
           <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Intro call</a>
           <button class="toggle" onclick="toggleDetails(this)">Read more</button>
         </div>
@@ -122,7 +124,7 @@ Mediated by a trusted external colleague, the real data surfaces.</p>
       </div>
       <div class="content">
         <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Coaching, but powered by the latest AI in the experience.</p>
-        <div style="display:flex; align-items:center; gap:20px; margin-bottom:8px;">
+        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
           <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Meet the coach</a>
           <button class="toggle" onclick="toggleDetails(this)">Read more</button>
         </div>
@@ -165,7 +167,7 @@ Put the tools and insight to work for you.</p>
       </div>
       <div class="content">
         <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Tailor your needs and interest, get taught by an AI native, receive regular updates from the frontline.</p>
-        <div style="display:flex; align-items:center; gap:20px; margin-bottom:8px;">
+        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
           <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Start now</a>
           <button class="toggle" onclick="toggleDetails(this)">Read more</button>
         </div>
