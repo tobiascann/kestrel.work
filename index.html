@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kestrel Work</title>
+<meta name="description" content="1-to-1 practice for CEOs and founders. Coaching, bespoke AI and insight reports to sharpen how you think.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -18,11 +19,22 @@
   .content { flex:1; max-width:560px; min-width:0; }
   .btn { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#000; padding:15px 24px; border-radius:999px; font-size:16px; font-weight:500; white-space:nowrap; border:none; cursor:pointer; }
   .toggle { font-size:16px; color:#8f8f8f; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
+  .textlink { font-size:16px; color:#8f8f8f; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px; }
+  .textlink:hover { color:#fff; }
   .card { display:flex; gap:56px; background:#111; border-radius:28px; padding:56px 64px; min-width:0; overflow:hidden; }
   .cards { display:flex; flex-direction:column; gap:24px; }
   .details { margin-top:36px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08); display:none; }
   .details.open { display:block; }
   .kicker { font-size:14px; letter-spacing:0.04em; text-transform:uppercase; color:#666; margin-bottom:10px; }
+  .shift { display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .shift:last-child { border-bottom:none; }
+  .shift .from { font-size:14px; color:#666; text-decoration:line-through; }
+  .shift .to { font-size:17px; color:#fff; font-weight:500; }
+  .shift p { margin:0; font-size:16px; line-height:1.55; color:#9a9a9a; }
+  .quote { display:flex; flex-direction:column; gap:14px; }
+  .quote p { margin:0; font-size:19px; line-height:1.6; color:#d4d4d4; }
+  .quote .who { font-size:15px; color:#8f8f8f; line-height:1.5; }
+  .quote .who b { color:#fff; font-weight:500; }
   .faq-item { display:flex; flex-direction:column; gap:12px; }
   .faq-q { font-size:21px; color:#fff; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
   .faq-arrow { font-size:20px; color:#8f8f8f; transition:transform 0.2s ease; flex-shrink:0; }
@@ -45,6 +57,7 @@
     section.row { padding-top:60px !important; padding-bottom:60px !important; }
     .btn { padding:14px 22px; font-size:15px; }
     .faq-q { font-size:19px; }
+    h1 { font-size:30px !important; }
     div[style*="grid-template-columns:1fr 1fr"] { display:flex !important; flex-direction:column !important; gap:28px !important; }
     div[style*="white-space:pre-line"] { white-space:normal !important; }
   }
@@ -53,197 +66,65 @@
 <body>
 <div class="wrap">
 
+  <!-- HERO -->
   <section class="row" style="padding:120px 0 100px; border-bottom:1px solid rgba(255,255,255,0.08);">
     <div class="label">
       <div style="font-weight:600; font-size:30px;">Kestrel Work</div>
       <div style="color:#767676;">London · LA · Tallinn</div>
     </div>
     <div class="content">
-      <p style="font-size:19px; line-height:1.6; color:#eaeaea; margin:0 0 40px; white-space:pre-line;">It's time to rebuild how we think.
-Coaching, AI and Insight: Together.</p>
+      <div class="kicker">1-to-1 practice for CEOs and founders</div>
+      <h1 style="font-size:38px; line-height:1.15; font-weight:600; letter-spacing:-0.02em; margin:0 0 24px; color:#fff;">Is your AI making you sharper, or just faster?</h1>
+      <p style="font-size:19px; line-height:1.6; color:#eaeaea; margin:0 0 40px;">The tools you use to capture signals should sharpen how you think, not just add to the pace. More AI isn't more clarity.</p>
       <div style="display:flex; gap:12px; align-items:center; justify-content:flex-start; flex-wrap:wrap;">
-        <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a call</a>
+        <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a free 30-min call</a>
         <span class="pill"><span class="dot"></span>Q4 2026</span>
       </div>
     </div>
   </section>
 
+  <!-- THE OFFER (single card) -->
   <section class="cards" style="margin:0 -64px; padding:0 0 60px;">
 
     <div class="card">
       <div class="label">
-        <div style="font-weight:500; margin-bottom:6px;">AI Enhanced Team Coaching</div>
-        <div style="font-size:15px; color:#8f8f8f; margin-bottom:10px; font-style:italic;">Group insights from individual coaching.</div>
-        <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$10k/mo for a team of 5
-6 months</div>
+        <div style="font-weight:500; margin-bottom:6px;">AI Enhanced 1-to-1 Coaching</div>
+        <div style="font-size:15px; color:#8f8f8f; margin-bottom:10px; font-style:italic;">Four sessions to reset your thinking.</div>
+        <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$2,500
+The first four sessions</div>
       </div>
       <div class="content">
-        <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">More cost-effective than executive coaching. Data-backed. Findings that go straight into strategy.</p>
+        <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Confidential coaching, AI configured to you, and insight reports built around how you think. You work directly with me. I keep my client list small on purpose, so every client gets my full attention.</p>
         <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
-          <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Intro call</a>
+          <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Arrange a session</a>
           <button class="toggle" onclick="toggleDetails(this)">Read more</button>
         </div>
         <div class="details">
-          <div style="margin-bottom:36px;">
-            <div class="kicker">Insight</div>
-            <p style="font-size:18px; line-height:1.6; color:#d4d4d4; margin:0; white-space:pre-line;">Anonymised team coaching data gives the best insight into how the team are actually functioning.
-Short-form, AI-enhanced coaching can surface it better than any other process.
-Mediated by a trusted external colleague, the real data surfaces.</p>
-          </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:36px;">
             <div>
               <div class="kicker">What you get</div>
               <ul style="margin:0; padding-left:18px; color:#d4d4d4; font-size:17px; line-height:1.6;">
-                <li style="margin-bottom:6px;">Coaching calls for the designated team, at a cadence that suits them</li>
-                <li style="margin-bottom:6px;">Patterns and approaches made visible from the sessions, mediated back to the team</li>
-                <li style="margin-bottom:6px;">A clear, systemic, data-backed report showing challenges and solutions, feeding directly into strategic goals</li>
+                <li style="margin-bottom:6px;">Four one-hour thinking sessions at a rhythm that suits you, blending cognitive coaching with AI consultancy</li>
+                <li style="margin-bottom:6px;">Detailed insight on your thinking, in the format you absorb best: visual diagrams, private audio briefs, or a written executive synthesis</li>
+                <li style="margin-bottom:6px;">A dedicated build session on the tools and practices that will help you most</li>
+                <li style="margin-bottom:6px;">A review at the end, and an exploration of where to go next</li>
               </ul>
             </div>
             <div>
               <div class="kicker">Who it's for</div>
-              <p style="font-size:17px; line-height:1.6; color:#d4d4d4; margin:0;">Teams who want real feedback on strategy. Who want tension and bottlenecks addressed. Who want optimal working practices.</p>
+              <p style="font-size:17px; line-height:1.6; color:#d4d4d4; margin:0;">CEOs and founders. Leaders using AI. VUCA navigators. Changemakers.</p>
             </div>
           </div>
-          <div>
-            <div class="kicker">Examples</div>
-            <div style="display:flex; flex-direction:column; gap:16px;">
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">Two fintech organisations: turned dozens of coaching conversations into board-legible numbers, trust gaps, time-management overload, restructuring anxiety, and a precise list of what leadership was missing.</p>
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">A 30-year-old professional services partnership: diagnosed a generational leadership gap and a fear-of-delegation pattern among senior partners directly from coaching-session data. Recommended a scoped, time-boxed intervention rather than a blanket program.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="label">
-        <div style="font-weight:500; margin-bottom:6px;">AI Enhanced Individual Coaching</div>
-        <div style="font-size:15px; color:#8f8f8f; margin-bottom:10px; font-style:italic;">Rewire your thinking architecture</div>
-        <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$2.5k/mo
-6 months</div>
-      </div>
-      <div class="content">
-        <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Coaching, but powered by the latest AI in the experience.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
-          <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Meet the coach</a>
-          <button class="toggle" onclick="toggleDetails(this)">Read more</button>
-        </div>
-        <div class="details">
           <div style="margin-bottom:36px;">
-            <div class="kicker">Insight</div>
-            <p style="font-size:18px; line-height:1.6; color:#d4d4d4; margin:0; white-space:pre-line;">It's a tech-rich world. Sometimes our habits haven't caught up, even when you're already running at a level most people don't reach.
-Cognitive coaching plus AI closes the gap.
-Put the tools and insight to work for you.</p>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:36px;">
-            <div>
-              <div class="kicker">What you get</div>
-              <ul style="margin:0; padding-left:18px; color:#d4d4d4; font-size:17px; line-height:1.6;">
-                <li style="margin-bottom:6px;">Micro-coaching that fits your week: 15 minutes, or longer. We'll find the right fit on one call.</li>
-                <li style="margin-bottom:6px;">Powerful insights delivered after the call as audio, text, or video.</li>
-                <li style="margin-bottom:6px;">Custom tools, shaped for exactly how you work, built together with you as coaching progresses</li>
-              </ul>
-            </div>
-            <div>
-              <div class="kicker">Who it's for</div>
-              <p style="font-size:17px; line-height:1.6; color:#d4d4d4; margin:0;">Leaders who want to make their systems as sharp as they are.</p>
-            </div>
+            <div class="kicker">What changes</div>
+            <div class="shift"><span class="from">Unstructured AI</span><span class="to">A reliable thinking partner</span><p>Switch from generic AI to a thinking partner configured to your needs and priorities.</p></div>
+            <div class="shift"><span class="from">Focus drain</span><span class="to">The right technology</span><p>Put tools to work that get the job done without draining your energy.</p></div>
+            <div class="shift"><span class="from">Generic reports</span><span class="to">Insight for the way you think</span><p>Reports that give you the information you need, in the style you take it in best.</p></div>
+            <div class="shift"><span class="from">Thinking alone</span><span class="to">A trusted strategist</span><p>A new team member, available when you need strategic insight: discreet, honest and supportive.</p></div>
           </div>
           <div>
-            <div class="kicker">Examples</div>
-            <div style="display:flex; flex-direction:column; gap:16px;">
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">A business owner running several ventures at once, each with its own reporting, its own rhythm, held together by memory and habit. Rebuilt his systems around how he actually thinks. Two custom trackers, built in hours, replaced weeks of manual work.</p>
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">A CEO mid-crisis: frozen accounts, volatile leadership above him, a colleague's job on the line. Solved the operational problem in days, then used the session to decide what mattered next: who to align with, how long to stay.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="label">
-        <div style="font-weight:500; margin-bottom:10px;">Personal AI Researcher and Consultant</div>
-        <div style="font-size:16px; color:#8f8f8f;">$1.5k/mo</div>
-      </div>
-      <div class="content">
-        <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Tailor your needs and interest, get taught by an AI native, receive regular updates from the frontline.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
-          <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Start now</a>
-          <button class="toggle" onclick="toggleDetails(this)">Read more</button>
-        </div>
-        <div class="details">
-          <div style="margin-bottom:36px;">
-            <div class="kicker">Insight</div>
-            <p style="font-size:18px; line-height:1.6; color:#d4d4d4; margin:0; white-space:pre-line;">Keeping up with AI is a full-time job most leaders don't have time for.
-Some ignore it. Some chase the hype.
-This delivers research and insight, at your pace, built around what actually matters to you.</p>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:36px;">
-            <div>
-              <div class="kicker">What you get</div>
-              <ul style="margin:0; padding-left:18px; color:#d4d4d4; font-size:17px; line-height:1.6;">
-                <li style="margin-bottom:6px;">Insight into what actually matters to your business, at a cadence you set</li>
-                <li style="margin-bottom:6px;">Research and synthesis handled entirely. You stay current without doing the work</li>
-                <li style="margin-bottom:6px;">Delivered how you want it: podcast, video, or a straight call</li>
-                <li style="margin-bottom:6px;">Custom AI tools built when a real use case emerges, transparent from day one</li>
-              </ul>
-            </div>
-            <div>
-              <div class="kicker">Who it's for</div>
-              <p style="font-size:17px; line-height:1.6; color:#d4d4d4; margin:0;">Leaders who want to stay ahead of AI, without doing the tracking themselves.</p>
-            </div>
-          </div>
-          <div>
-            <div class="kicker">Examples</div>
-            <div style="display:flex; flex-direction:column; gap:16px;">
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">An ongoing technical exchange with the founder of a comparable AI-driven leadership tool, benchmarking system design, methodology, and where the technology is actually heading. Delivered as a monthly two-hour call exploring available tools and insight, alongside regular conversations in chat relay pertaining to specific systems architecture.</p>
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">Three sessions with a CEO, exploring AI data offers and informing a live technology decision. Included ongoing support for his own learning across various commercial GPT tools.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="label">
-        <div style="font-weight:500; margin-bottom:6px;">Story, Leadership &amp; AI Workshop</div>
-        <div style="font-size:15px; color:#8f8f8f; margin-bottom:10px; font-style:italic;">Storytelling is leadership. AI is the new fluency.</div>
-        <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$1,100 half day (3 hrs)
-$2,000 full day</div>
-      </div>
-      <div class="content">
-        <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Bring both into the room. A one-day session that sharpens how leaders think, write, and use AI.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
-          <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Arrange a workshop</a>
-          <button class="toggle" onclick="toggleDetails(this)">Read more</button>
-        </div>
-        <div class="details">
-          <div style="margin-bottom:36px;">
-            <div class="kicker">Insight</div>
-            <p style="font-size:18px; line-height:1.6; color:#d4d4d4; margin:0; white-space:pre-line;">Do the unglamorous work first: clear workflows and explicit judgement.
-Get the foundations right, then let AI take care of the rest.</p>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:36px;">
-            <div>
-              <div class="kicker">What you get</div>
-              <ul style="margin:0; padding-left:18px; color:#d4d4d4; font-size:17px; line-height:1.6;">
-                <li style="margin-bottom:6px;">A crash course in story fundamentals: structure, clarity, what actually lands</li>
-                <li style="margin-bottom:6px;">Live work on how leaders use AI in their own writing: prompts, emails, comms, marketing copy</li>
-                <li style="margin-bottom:6px;">Real reflection on how the group currently engages with AI, and where it's underused or misused</li>
-                <li style="margin-bottom:6px;">Materials and resources to take back into the organisation</li>
-              </ul>
-            </div>
-            <div>
-              <div class="kicker">Who it's for</div>
-              <p style="font-size:17px; line-height:1.6; color:#d4d4d4; margin:0;">Leadership teams who want their people thinking with more craft before they communicate with it, using AI as a multiplier on clear judgement, not a substitute for it.</p>
-            </div>
-          </div>
-          <div>
-            <div class="kicker">Examples</div>
-            <div style="display:flex; flex-direction:column; gap:16px;">
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">A chamber of commerce leadership group: 15 leaders, three hours, working on how leaders engage AI prompts to create sharper text and copy.</p>
-              <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">A national energy corporation: 40 leaders, three hours. A story fundamentals crash course, applied directly to comms, conversation, and marketing materials.</p>
-            </div>
+            <div class="kicker">A promise</div>
+            <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">We only work together if we both agree, during the free diagnostic call, that this will significantly multiply your bandwidth.</p>
           </div>
         </div>
       </div>
@@ -251,6 +132,22 @@ Get the foundations right, then let AI take care of the rest.</p>
 
   </section>
 
+  <!-- CLIENTS -->
+  <section class="row" style="padding:100px 0; border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="label">Clients</div>
+    <div class="content" style="display:flex; flex-direction:column; gap:48px;">
+      <div class="quote">
+        <p>“The benefit is I get better. And as I get better I am able to guide and teach and contribute at a level I couldn’t before. That is enough reason.”</p>
+        <div class="who"><b>Remo Ojaste</b><br>Former Special Forces Operative · Co-Founder and CEO, Combat Ready</div>
+      </div>
+      <div class="quote">
+        <p>“Nothing else gives me this. Not therapy. Not coaching. Not AI alone. What makes it different is that it gets more precise the longer we work. It sees patterns in me and my organisation I cannot see myself. And it keeps driving us closer to our truth.”</p>
+        <div class="who"><b>Anna Beckmann</b><br>Filmmaker, Investor, Author · Founder of Present Mind</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="row" style="padding:100px 0; border-top:1px solid rgba(255,255,255,0.08);">
     <div class="label">FAQ</div>
     <div class="content" style="display:flex; flex-direction:column; gap:44px;">
@@ -259,36 +156,16 @@ Get the foundations right, then let AI take care of the rest.</p>
         <div class="faq-a">I've spent 20 years in leadership and 6 in SaaS &amp; AI. I've coached C-suite leaders through transition and shipped software &amp; AI tools for leadership development. Now I blend coaching &amp; advisory to build leaders' real thinking architecture.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How does this work?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">We start with a short call. If we're a fit, you'll have a proposal the following Monday.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Why hire an outside perspective?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">Inside a company every idea has history and someone attached to it. I show up with neither. I see solutions and challenges with a very different lens and I can see what people often can't.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Who do you work with?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">Fintech, scale-ups, CEO's and public companies that need fresh perspective and want to move even faster.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How flexible are engagements?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">Prices and timelines are fixed so you always know the costs and the dates. We can be flexible on details of cadence and reporting style. These have to be right for you and your organisation.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How fast can we start?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">An intro call, a proposal within 48 hours, and a kickoff the following Monday.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What happens on the intro call?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">30 mins. I identify your needs, I will let you know whether I am the right person. No deck, No questionnaire, you leave knowing what I would do next.</div>
-      </div>
-      <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Where are you based, and do you work remotely?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">I am based in the UK and frequently in LA and Tallinn. If you are in London I am always around to grab a coffee.</div>
+        <div class="faq-a">I'm based in the UK and frequently in LA and Tallinn. If you're in London, I'm always around to grab a coffee.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Why the Kestrel?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">They are energy efficient, highly adaptive with exquisite pattern matching skills.</div>
+        <div class="faq-a">They're energy efficient, highly adaptive, with exquisite pattern-matching skills.</div>
+      </div>
+      <div>
+        <!-- NEWSLETTER: replace NEWSLETTER_URL below with your newsletter link -->
+        <a class="textlink" href="NEWSLETTER_URL" target="_blank" rel="noopener">Read the newsletter →</a>
       </div>
     </div>
   </section>
