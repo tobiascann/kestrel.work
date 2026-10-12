@@ -165,6 +165,10 @@ body { margin: 0; background: #FFFFFF; overflow-x: hidden; }
 a { color: #000000; }
 a:hover { opacity: 0.85; }
 summary::-webkit-details-marker { display: none; }
+@media (max-width: 640px) {
+  .obstacles { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .obstacles li { min-height: 0 !important; padding: 14px 18px !important; font-size: 18px !important; align-items: center !important; border-radius: 12px !important; }
+}
 details[open] summary span { transform: rotate(45deg); }
 summary span { transition: transform 0.2s ease; }
 </style>
@@ -210,7 +214,7 @@ summary span { transition: transform 0.2s ease; }
 <div style="margin-bottom: 32px">
 <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 800">What’s getting in the way</h2>
 </div>
-<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; font-size: clamp(19px, 1.9vw, 22px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2">
+<ul class="obstacles" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; font-size: clamp(19px, 1.9vw, 22px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2">
 <li style="padding: 22px; min-height: 120px; box-sizing: border-box; background: #1C1C1C; border-radius: 16px; display: flex; align-items: flex-end">Short on time</li>
 <li style="padding: 22px; min-height: 120px; box-sizing: border-box; background: #1C1C1C; border-radius: 16px; display: flex; align-items: flex-end">No confidence in AI’s results</li>
 <li style="padding: 22px; min-height: 120px; box-sizing: border-box; background: #1C1C1C; border-radius: 16px; display: flex; align-items: flex-end">Data sharing concerns</li>
