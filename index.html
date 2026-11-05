@@ -4,188 +4,323 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kestrel Work</title>
-<meta name="description" content="1-to-1 practice for CEOs and founders. Coaching, bespoke AI and insight reports to sharpen how you think.">
+<meta name="description" content="AI that enhances decision-making. Consultancy, coaching and applied AI for leaders and HR teams.">
+<meta property="og:title" content="Kestrel Work">
+<meta property="og:description" content="AI that enhances decision-making. Consultancy, coaching and applied AI for leaders and HR teams.">
+<meta property="og:image" content="https://kestrel.work/img/kestrel-logo.png">
+<link rel="icon" href="img/kestrel-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..600;1,400..600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
-  html { overflow-x:hidden; }
-  body { margin:0; background:#040404; color:#f2f2f2; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; overflow-x:hidden; }
-  a { color:#fff; text-decoration:none; }
-  a:hover { color:#b8b8b8; }
-  .wrap { max-width:1120px; margin:0 auto; padding:0 64px; }
-  .row { display:flex; gap:56px; min-width:0; }
-  .label { width:220px; flex-shrink:0; font-size:20px; color:#fff; min-width:0; }
-  .content { flex:1; max-width:560px; min-width:0; }
-  .btn { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#000; padding:15px 24px; border-radius:999px; font-size:16px; font-weight:500; white-space:nowrap; border:none; cursor:pointer; }
-  .toggle { font-size:16px; color:#8f8f8f; cursor:pointer; background:none; border:none; padding:0; font-family:inherit; }
-  .textlink { font-size:16px; color:#8f8f8f; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px; }
-  .textlink:hover { color:#fff; }
-  .card { display:flex; gap:56px; background:#111; border-radius:28px; padding:56px 64px; min-width:0; overflow:hidden; }
-  .cards { display:flex; flex-direction:column; gap:24px; }
-  .details { margin-top:36px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08); display:none; }
-  .details.open { display:block; }
-  .kicker { font-size:14px; letter-spacing:0.04em; text-transform:uppercase; color:#666; margin-bottom:10px; }
-  .shift { display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
-  .shift:last-child { border-bottom:none; }
-  .shift .from { font-size:14px; color:#666; text-decoration:line-through; }
-  .shift .to { font-size:17px; color:#fff; font-weight:500; }
-  .shift p { margin:0; font-size:16px; line-height:1.55; color:#9a9a9a; }
-  .quote { display:flex; flex-direction:column; gap:14px; }
-  .quote p { margin:0; font-size:19px; line-height:1.6; color:#d4d4d4; }
-  .quote .who { font-size:15px; color:#8f8f8f; line-height:1.5; }
-  .quote .who b { color:#fff; font-weight:500; }
-  .faq-item { display:flex; flex-direction:column; gap:12px; }
-  .faq-q { font-size:21px; color:#fff; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
-  .faq-arrow { font-size:20px; color:#8f8f8f; transition:transform 0.2s ease; flex-shrink:0; }
-  .faq-item.open .faq-arrow { transform:rotate(45deg); }
-  .faq-a { font-size:17px; color:#8f8f8f; line-height:1.6; display:none; }
-  .faq-item.open .faq-a { display:block; }
-  footer { padding:60px 0 80px; border-top:1px solid rgba(255,255,255,0.08); display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; }
-  .pill { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.15); color:#ccc; padding:16px 22px; border-radius:999px; font-size:16px; }
-  .dot { width:7px; height:7px; border-radius:50%; background:#3ecf5e; display:inline-block; animation:blink 1.6s ease-in-out infinite; }
-  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.25; } }
+  :root {
+    --paper:#F6F4EF; --card:#FBFAF7; --line:#DDD8CF;
+    --ink:#1F1E1C; --soft:#55524C; --body:#3A3834;
+    --accent:#A04A2C; --accent-light:#D9A07F; --ink-soft:#C2BDB3;
+    --serif:'EB Garamond', Georgia, serif; --sans:'DM Sans', Arial, sans-serif;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:18px; line-height:1.55; overflow-x:hidden; }
+  a { color:inherit; }
+  img { max-width:100%; display:block; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 40px; }
+  .eyebrow { font-size:14px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); margin:0 0 16px; }
+  h1, h2, h3.serif { font-family:var(--serif); font-weight:500; line-height:1.08; margin:0; }
+  h1 { font-size:clamp(44px, 5.6vw, 76px); }
+  h2 { font-size:clamp(34px, 4.2vw, 56px); max-width:22ch; }
+  h3 { margin:0; }
+  p { margin:0; }
+  section { padding:96px 0; }
+  .btn { display:inline-block; background:var(--ink); color:var(--paper); text-decoration:none; padding:15px 26px; border-radius:999px; font-weight:500; font-size:16px; }
+  .btn:hover { background:var(--accent); }
+  .btn.light { background:var(--paper); color:var(--ink); }
+  .btn.light:hover { background:var(--accent-light); }
 
+  /* header */
+  header { padding:24px 0; }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; }
+  .brand img { width:44px; height:44px; object-fit:contain; }
+  header .btn { padding:10px 18px; font-size:14px; }
+
+  /* hero */
+  .hero { padding:56px 0 96px; }
+  .hero .wrap { display:grid; grid-template-columns:1.5fr 1fr; gap:48px; align-items:center; }
+  .hero h1 { hyphens:none; }
+  .hero-text { display:flex; flex-direction:column; gap:28px; }
+  .hero-text .sub { font-size:22px; color:var(--soft); max-width:30ch; }
+  .hero-text .meta { font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:var(--soft); }
+
+  /* cards */
+  .grid { display:grid; gap:24px; margin-top:48px; }
+  .g2 { grid-template-columns:repeat(2, 1fr); }
+  .g3 { grid-template-columns:repeat(3, 1fr); }
+  .g5 { grid-template-columns:repeat(5, 1fr); }
+  .card { background:var(--card); border:1px solid var(--line); padding:36px; display:flex; flex-direction:column; gap:14px; }
+  .card h3 { font-family:var(--serif); font-size:30px; font-weight:500; line-height:1.15; }
+  .card p { color:var(--soft); }
+  .card .tag { font-size:13px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); }
+  .card .changed { color:var(--ink); }
+  .stat { margin-top:auto; padding-top:20px; }
+  .stat .num { font-family:var(--serif); font-size:56px; line-height:1; color:var(--accent); }
+  .stat p { font-size:15px; margin-top:8px; }
+  .stat a { color:var(--soft); }
+
+  /* dark band */
+  .dark { background:var(--ink); color:#EDEAE3; }
+  .dark .eyebrow { color:var(--accent-light); }
+  .dark h2 { max-width:30ch; font-weight:400; }
+  .principle { border-top:2px solid #8C877E; padding-top:24px; }
+  .principle h3 { font-size:20px; font-weight:700; margin-bottom:10px; }
+  .principle p { color:var(--ink-soft); }
+
+  /* stages */
+  .stage { border-top:3px solid var(--ink); padding-top:20px; display:flex; flex-direction:column; gap:8px; }
+  .stage .n { font-family:var(--serif); font-size:56px; line-height:1; color:var(--accent); }
+  .stage h3 { font-size:20px; font-weight:700; }
+  .stage p { font-size:16px; color:var(--soft); }
+  .note { margin-top:36px; color:var(--soft); }
+
+  /* quotes */
+  .quote { border-top:3px solid var(--ink); padding-top:20px; display:flex; flex-direction:column; gap:16px; }
+  .quote blockquote { margin:0; font-family:var(--serif); font-style:italic; font-size:25px; line-height:1.35; }
+  .quote .who { font-size:15px; color:var(--soft); }
+  .quote .who b { color:var(--ink); font-weight:500; }
+
+  /* team */
+  .team { display:grid; grid-template-columns:420px 1fr; gap:24px; margin-top:48px; }
+  .lead { background:var(--ink); color:#EDEAE3; padding:40px; display:flex; flex-direction:column; gap:16px; }
+  .lead .tag { color:var(--accent-light); }
+  .lead h3 { font-family:var(--serif); font-size:36px; font-weight:500; }
+  .lead ul { margin:0; padding-left:20px; color:var(--ink-soft); display:flex; flex-direction:column; gap:6px; }
+  .lead .contact { margin-top:auto; }
+  .specialists { display:grid; grid-template-columns:repeat(2, 1fr); gap:24px; }
+  .specialists .card h3 { font-family:var(--sans); font-size:20px; font-weight:700; }
+
+  /* faq */
+  details { border-top:1px solid var(--line); padding:22px 0; }
+  details:last-child { border-bottom:1px solid var(--line); }
+  summary { cursor:pointer; font-size:21px; font-weight:500; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:"+"; color:var(--soft); transition:transform .2s; }
+  details[open] summary::after { transform:rotate(45deg); }
+  details p { margin-top:12px; color:var(--soft); max-width:62ch; }
+
+  /* cta + footer */
+  .cta .wrap { display:flex; flex-direction:column; gap:28px; align-items:flex-start; }
+  footer { border-top:1px solid var(--line); padding:40px 0 64px; font-size:15px; color:var(--soft); }
+  footer .wrap { display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
+
+  @media (max-width: 960px) {
+    .g3, .g5 { grid-template-columns:repeat(2, 1fr); }
+    .team { grid-template-columns:1fr; }
+  }
   @media (max-width: 720px) {
-    .wrap { padding:0; }
-    footer { padding-left:24px; padding-right:24px; }
-    .row { flex-direction:column; gap:20px; padding-left:24px !important; padding-right:24px !important; }
-    .label { width:auto !important; }
-    .cards { margin:0 !important; }
-    .card { flex-direction:column; gap:28px; padding:36px 24px; margin:0; border-radius:20px; }
-    .content { max-width:100%; width:100%; }
-    section.row { padding-top:60px !important; padding-bottom:60px !important; }
-    .btn { padding:14px 22px; font-size:15px; }
-    .faq-q { font-size:19px; }
-    h1 { font-size:30px !important; }
-    div[style*="grid-template-columns:1fr 1fr"] { display:flex !important; flex-direction:column !important; gap:28px !important; }
-    div[style*="white-space:pre-line"] { white-space:normal !important; }
+    .wrap { padding:0 16px; }
+    section { padding:64px 0; }
+    .hero { padding:24px 0 64px; }
+    .hero .wrap { grid-template-columns:1fr; gap:32px; }
+    .hero-logo { order:-1; max-width:260px; }
+    .g2, .g3, .g5, .specialists { grid-template-columns:1fr; }
+    .card, .lead { padding:28px 22px; }
+    header .brand span { display:none; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- HERO -->
-  <section class="row" style="padding:120px 0 100px; border-bottom:1px solid rgba(255,255,255,0.08);">
-    <div class="label">
-      <div style="font-weight:600; font-size:30px;">Kestrel Work</div>
-      <div style="color:#767676;">London · LA · Tallinn</div>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="img/kestrel-logo.png" alt=""><span>Kestrel Work</span></a>
+    <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a call</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Consultancy, coaching &amp; applied AI</p>
+      <h1>AI that enhances decision-making.</h1>
+      <p class="sub">For leaders and HR teams who want to get a second opinion before they commit.</p>
+      <div><a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a free 30-minute call</a></div>
+      <p class="meta">London · LA · Tallinn</p>
     </div>
-    <div class="content">
-      <div class="kicker">1-to-1 practice for CEOs and founders</div>
-      <h1 style="font-size:38px; line-height:1.15; font-weight:600; letter-spacing:-0.02em; margin:0 0 24px; color:#fff;">Is your AI making you sharper, or just faster?</h1>
-      <p style="font-size:19px; line-height:1.6; color:#eaeaea; margin:0 0 40px;">The tools you use to capture signals should sharpen how you think, not just add to the pace. More AI isn't more clarity.</p>
-      <div style="display:flex; gap:12px; align-items:center; justify-content:flex-start; flex-wrap:wrap;">
-        <a class="btn" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a free 30-min call</a>
-        <span class="pill"><span class="dot"></span>Q4 2026</span>
-      </div>
-    </div>
-  </section>
+    <img class="hero-logo" src="img/kestrel-logo.png" alt="Kestrel Work logo: an ink-wash kestrel in flight above the words KESTREL.WORK" width="357" height="361">
+  </div>
+</section>
 
-  <!-- THE OFFER (single card) -->
-  <section class="cards" style="margin:0 -64px; padding:0 0 60px;">
-
-    <div class="card">
-      <div class="label">
-        <div style="font-weight:500; margin-bottom:6px;">AI Enhanced 1-to-1 Coaching</div>
-        <div style="font-size:15px; color:#8f8f8f; margin-bottom:10px; font-style:italic;">Four sessions to reset your thinking.</div>
-        <div style="font-size:16px; color:#8f8f8f; white-space:pre-line;">$2,500
-The first four sessions</div>
+<section id="problems">
+  <div class="wrap">
+    <p class="eyebrow">The problems</p>
+    <h2>Most organisations have more intelligence than they use</h2>
+    <div class="grid g3">
+      <div class="card">
+        <h3>The data exists</h3>
+        <p>Reviews, surveys and leadership conversations already hold the answers, but rarely get joined up.</p>
+        <div class="stat"><div class="num">55%</div><p>of organisational data goes unknown or unused (<a href="https://www.splunk.com/en_us/campaigns/dark-data.html">Splunk, 2019</a>)</p></div>
       </div>
-      <div class="content">
-        <p style="font-size:19px; line-height:1.6; color:#d4d4d4; margin:0 0 28px;">Confidential coaching, AI configured to you, and insight reports built around how you think. You work directly with me. I keep my client list small on purpose, so every client gets my full attention.</p>
-        <div style="display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:8px;">
-          <a class="btn" style="padding:10px 18px; font-size:14px;" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Arrange a session</a>
-          <button class="toggle" onclick="toggleDetails(this)">Read more</button>
-        </div>
-        <div class="details">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:36px;">
-            <div>
-              <div class="kicker">What you get</div>
-              <ul style="margin:0; padding-left:18px; color:#d4d4d4; font-size:17px; line-height:1.6;">
-                <li style="margin-bottom:6px;">Four one-hour thinking sessions at a rhythm that suits you, blending cognitive coaching with AI consultancy</li>
-                <li style="margin-bottom:6px;">Detailed insight on your thinking, in the format you absorb best: visual diagrams, private audio briefs, or a written executive synthesis</li>
-                <li style="margin-bottom:6px;">A dedicated build session on the tools and practices that will help you most</li>
-                <li style="margin-bottom:6px;">A review at the end, and an exploration of where to go next</li>
-              </ul>
-            </div>
-            <div>
-              <div class="kicker">Who it's for</div>
-              <p style="font-size:17px; line-height:1.6; color:#d4d4d4; margin:0;">CEOs and founders. Leaders using AI. VUCA navigators. Changemakers.</p>
-            </div>
-          </div>
-          <div style="margin-bottom:36px;">
-            <div class="kicker">What changes</div>
-            <div class="shift"><span class="from">Unstructured AI</span><span class="to">A reliable thinking partner</span><p>Switch from generic AI to a thinking partner configured to your needs and priorities.</p></div>
-            <div class="shift"><span class="from">Focus drain</span><span class="to">The right technology</span><p>Put tools to work that get the job done without draining your energy.</p></div>
-            <div class="shift"><span class="from">Generic reports</span><span class="to">Insight for the way you think</span><p>Reports that give you the information you need, in the style you take it in best.</p></div>
-            <div class="shift"><span class="from">Thinking alone</span><span class="to">A trusted strategist</span><p>A new team member, available when you need strategic insight: discreet, honest and supportive.</p></div>
-          </div>
-          <div>
-            <div class="kicker">A promise</div>
-            <p style="font-size:17px; line-height:1.6; color:#9a9a9a; margin:0;">We only work together if we both agree, during the free diagnostic call, that this will significantly multiply your bandwidth.</p>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Process eats time</h3>
+        <p>A thorough review can take a manager days, and still say little a person can act on.</p>
+        <div class="stat"><div class="num">14%</div><p>of employees strongly agree their reviews inspire them to improve (<a href="https://www.gallup.com/workplace/236135/give-performance-reviews-actually-inspire-employees.aspx">Gallup, 2017</a>)</p></div>
+      </div>
+      <div class="card">
+        <h3>Tools add layers</h3>
+        <p>Each new platform is one more thing to learn. Adoption stalls where the work happens.</p>
+        <div class="stat"><div class="num">40%</div><p>of workers held back after a poor experience with new software, delaying or avoiding use (<a href="https://www.apmdigest.com/gartner-employee-experience-new-software">Gartner, 2021</a>)</p></div>
       </div>
     </div>
+  </div>
+</section>
 
-  </section>
+<section class="dark" id="approach">
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>We find out how work really happens, design AI support inside the tools you already use, and leave you able to run it.</h2>
+    <div class="grid g3">
+      <div class="principle"><h3>You own it</h3><p>What we build runs in your tools and belongs to you.</p></div>
+      <div class="principle"><h3>Tool-neutral</h3><p>We don’t resell software. If a product already does the job, we recommend it.</p></div>
+      <div class="principle"><h3>Better data, better decisions</h3><p>We retrieve the best data, so people can make decisions effectively.</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- CLIENTS -->
-  <section class="row" style="padding:100px 0; border-top:1px solid rgba(255,255,255,0.08);">
-    <div class="label">Clients</div>
-    <div class="content" style="display:flex; flex-direction:column; gap:48px;">
-      <div class="quote">
-        <p>“The benefit is I get better. And as I get better I am able to guide and teach and contribute at a level I couldn’t before. That is enough reason.”</p>
-        <div class="who"><b>Remo Ojaste</b><br>Former Special Forces Operative · Co-Founder and CEO, Combat Ready</div>
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">What we offer</p>
+    <h2>Four ways to work together</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Get a second opinion</h3><p>We support leaders with their AI development, then provide regular check-ins: a second opinion on decisions, tools and vendors as they arise.</p></div>
+      <div class="card"><h3>Blueprint and build</h3><p>We analyse how a process really works, design AI support in your stack, then build, test and hand it over.</p></div>
+      <div class="card"><h3>Coaching with insight</h3><p>Short, focused coaching for leaders and teams, with anonymised themes read back to show where work gets stuck.</p></div>
+      <div class="card"><h3>Workshops</h3><p>Half or full days on story, leadership and AI, with leaders working on their own communication.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">How we work</p>
+    <h2>How an engagement runs</h2>
+    <div class="grid g5">
+      <div class="stage"><span class="n">0</span><h3>Diagnostic</h3><p>A two-way check: what you use now, and whether we can help.</p></div>
+      <div class="stage"><span class="n">1</span><h3>AI setup</h3><p>Working sessions with your leaders, built on what the diagnostic showed.</p></div>
+      <div class="stage"><span class="n">2</span><h3>Blueprint</h3><p>Analysis with your people, ending in one design and its cost.</p></div>
+      <div class="stage"><span class="n">3</span><h3>Build</h3><p>A road test with a small group, then the build and handover.</p></div>
+      <div class="stage"><span class="n">4</span><h3>Maintenance</h3><p>Back-up once it’s running, as much or as little as you need.</p></div>
+    </div>
+    <p class="note">Each stage ends with a decision. You can stop after any of them.</p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow">Previous work: leaders</p>
+    <h2>Freeing leaders to lead</h2>
+    <div class="grid g3">
+      <div class="card">
+        <span class="tag">Tech scale-up</span>
+        <h3>A CEO who wanted his team to decide</h3>
+        <p>We built him a bespoke system holding the company’s know-how, so the team could find answers without him.</p>
+        <p class="changed"><b>What changed:</b> a decision framework the team uses, and a clear plan for his strategy time.</p>
       </div>
-      <div class="quote">
-        <p>“Nothing else gives me this. Not therapy. Not coaching. Not AI alone. What makes it different is that it gets more precise the longer we work. It sees patterns in me and my organisation I cannot see myself. And it keeps driving us closer to our truth.”</p>
-        <div class="who"><b>Anna Beckmann</b><br>Filmmaker, Investor, Author · Founder of Present Mind</div>
+      <div class="card">
+        <span class="tag">Founder, several businesses</span>
+        <h3>Systems held together by memory</h3>
+        <p>We rebuilt his thinking architecture, complemented by AI.</p>
+        <p class="changed"><b>What changed:</b> two custom AI trackers, built in hours, replaced weeks of manual work.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Legal firm</span>
+        <h3>Why won’t senior partners let go?</h3>
+        <p>We diagnosed the pattern directly from coaching sessions across the partnership.</p>
+        <p class="changed"><b>What changed:</b> a generational gap named, and a short targeted fix in place of a blanket programme.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="row" style="padding:100px 0; border-top:1px solid rgba(255,255,255,0.08);">
-    <div class="label">FAQ</div>
-    <div class="content" style="display:flex; flex-direction:column; gap:44px;">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Who are you?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">I've spent 20 years in leadership and 6 in SaaS &amp; AI. I've coached C-suite leaders through transition and shipped software &amp; AI tools for leadership development. Now I blend coaching &amp; advisory to build leaders' real thinking architecture.</div>
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Previous work: organisations</p>
+    <h2>Naming what is really in the way</h2>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag">Bank, Nordics</span>
+        <h3>Finding the gaps in a leadership team</h3>
+        <p>We routinely analysed leaders’ coaching conversations, then built an AI-analysed self-assessment for the wider team.</p>
+        <p class="changed"><b>What changed:</b> four drains named through a mediated process, then a self-assessment rolled out to 300+ people, showing clear strengths and weaknesses.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Where are you based, and do you work remotely?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">I'm based in the UK and frequently in LA and Tallinn. If you're in London, I'm always around to grab a coffee.</div>
+      <div class="card">
+        <span class="tag">Energy company</span>
+        <h3>Communicating through change</h3>
+        <p>A three-hour workshop, then follow-up sessions with individual leaders.</p>
+        <p class="changed"><b>What changed:</b> staff now use a shared playbook for responding to messages and mediating change.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Why the Kestrel?<span class="faq-arrow">+</span></div>
-        <div class="faq-a">They're energy efficient, highly adaptive, with exquisite pattern-matching skills.</div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <p class="eyebrow">Who you work with</p>
+    <h2>One lead, with specialists as you need them</h2>
+    <div class="team">
+      <div class="lead">
+        <span class="tag eyebrow" style="margin:0">Your client lead</span>
+        <h3>Toby Cann</h3>
+        <ul>
+          <li>Over 20 years in leadership and training</li>
+          <li>A decade of consultancy at moments of growth and change</li>
+          <li>Five years in SaaS and AI</li>
+          <li>Certified Cognitive Coach</li>
+        </ul>
+        <p class="contact">Your single point of contact, from the first call to the last.</p>
       </div>
       <div>
-        <!-- NEWSLETTER: replace NEWSLETTER_URL below with your newsletter link -->
-        <a class="textlink" href="NEWSLETTER_URL" target="_blank" rel="noopener">Read the newsletter →</a>
+        <div class="specialists">
+          <div class="card"><h3>Compliance and security</h3><p>A CTO for data protection, security and compliance</p></div>
+          <div class="card"><h3>Additional coaches</h3><p>More coaching capacity when a programme grows</p></div>
+          <div class="card"><h3>Training teams</h3><p>Specialist trainers where the work shows a need</p></div>
+          <div class="card"><h3>Data analysts</h3><p>Deeper analysis when your data calls for it</p></div>
+        </div>
+        <p class="note">Brought in when the work calls for them.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <span style="font-size:15px; color:#666;">© 2006—2026 Kestrel Work</span>
-    <a href="mailto:toby@kestrelwork.com" style="font-size:15px; color:#8f8f8f;">toby@kestrelwork.com</a>
-  </footer>
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2>Before you call</h2>
+    <div style="margin-top:40px">
+      <details><summary>What happens on the first call?</summary><p>Thirty minutes, free. We look at what you use now and what you need, and we tell you honestly whether we can help. If we can’t, we’ll say so.</p></details>
+      <details><summary>Where are you based, and do you work remotely?</summary><p>Based in the UK, and frequently in LA and Tallinn. We work remotely or in person, whichever suits the work.</p></details>
+      <details><summary>Why the kestrel?</summary><p>They’re energy efficient, highly adaptive, with exquisite pattern-matching skills.</p></details>
+    </div>
+  </div>
+</section>
 
-</div>
+<section class="dark cta">
+  <div class="wrap">
+    <p class="eyebrow">Get a second opinion</p>
+    <h2>Start with a free 30-minute call</h2>
+    <a class="btn light" href="https://calendar.app.google/Z2iVokVw8aTHnL7Z9">Book a call</a>
+  </div>
+</section>
 
-<script>
-function toggleFaq(q) {
-  q.closest('.faq-item').classList.toggle('open');
-}
-function toggleDetails(btn) {
-  const details = btn.closest('.content').querySelector('.details');
-  details.classList.toggle('open');
-  btn.textContent = details.classList.contains('open') ? 'Hide' : (btn.dataset.label || 'Read more');
-}
-</script>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2006–2026 Kestrel Work</span>
+    <a href="mailto:toby@kestrelwork.com">toby@kestrelwork.com</a>
+  </div>
+</footer>
+
 </body>
 </html>
