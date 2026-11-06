@@ -57,6 +57,8 @@
   .g2 { grid-template-columns:repeat(2, 1fr); }
   .g3 { grid-template-columns:repeat(3, 1fr); }
   .g5 { grid-template-columns:repeat(5, 1fr); }
+  .clients .card { padding:24px 20px; justify-content:center; min-height:96px; }
+  .clients .card h3 { font-size:19px; }
   .card { background:var(--card); border:1px solid var(--line); padding:36px; display:flex; flex-direction:column; gap:14px; }
   .card h3 { font-family:var(--serif); font-size:30px; font-weight:500; line-height:1.15; }
   .card p { color:var(--soft); }
@@ -155,22 +157,17 @@
 <section id="problems">
   <div class="wrap">
     <p class="eyebrow">The problems</p>
-    <h2>Most organisations have more intelligence than they use</h2>
-    <div class="grid g3">
+    <h2>Technology is moving faster than most organisations</h2>
+    <div class="grid g2">
       <div class="card">
-        <h3>The data exists</h3>
-        <p>Reviews, surveys and leadership conversations already hold the answers, but rarely get joined up.</p>
-        <div class="stat"><div class="num">55%</div><p>of organisational data goes unknown or unused (<a href="https://www.splunk.com/en_us/campaigns/dark-data.html">Splunk, 2019</a>)</p></div>
-      </div>
-      <div class="card">
-        <h3>Process eats time</h3>
-        <p>A thorough review can take a manager days, and still say little a person can act on.</p>
-        <div class="stat"><div class="num">14%</div><p>of employees strongly agree their reviews inspire them to improve (<a href="https://www.gallup.com/workplace/236135/give-performance-reviews-actually-inspire-employees.aspx">Gallup, 2017</a>)</p></div>
-      </div>
-      <div class="card">
-        <h3>Tools add layers</h3>
-        <p>Each new platform is one more thing to learn. Adoption stalls where the work happens.</p>
+        <h3>The sloth tax</h3>
+        <p>The world isn’t keeping up with tech developments, and the lag has a cost: slower work, missed opportunities and tools that are paid for but barely used.</p>
         <div class="stat"><div class="num">40%</div><p>of workers held back after a poor experience with new software, delaying or avoiding use (<a href="https://www.apmdigest.com/gartner-employee-experience-new-software">Gartner, 2021</a>)</p></div>
+      </div>
+      <div class="card">
+        <h3>Decision intelligence in a VUCA world</h3>
+        <p>In a volatile, uncertain, complex and ambiguous world, the intelligence behind good decisions needs to be prioritised, not surrendered.</p>
+        <div class="stat"><div class="num">55%</div><p>of organisational data goes unknown or unused (<a href="https://www.splunk.com/en_us/campaigns/dark-data.html">Splunk, 2019</a>)</p></div>
       </div>
     </div>
   </div>
@@ -193,7 +190,7 @@
     <p class="eyebrow">What we offer</p>
     <h2>Four ways to work together</h2>
     <div class="grid g2">
-      <div class="card"><h3>Get a second opinion</h3><p>We support leaders with their AI development, then provide regular check-ins: a second opinion on decisions, tools and vendors as they arise.</p></div>
+      <div class="card"><h3>Dial in an AI fixer</h3><p>A consultant on standby: a second opinion on an AI solution, help using a tool, or a tool found that does the job.</p></div>
       <div class="card"><h3>Blueprint and build</h3><p>We analyse how a process really works, design AI support in your stack, then build, test and hand it over.</p></div>
       <div class="card"><h3>Coaching with insight</h3><p>Short, focused coaching for leaders and teams, with anonymised themes read back to show where work gets stuck.</p></div>
       <div class="card"><h3>Workshops</h3><p>Half or full days on story, leadership and AI, with leaders working on their own communication.</p></div>
@@ -201,72 +198,23 @@
   </div>
 </section>
 
-<section id="how">
-  <div class="wrap">
-    <p class="eyebrow">How we work</p>
-    <h2>How an engagement runs</h2>
-    <div class="grid g5">
-      <div class="stage"><span class="n">0</span><h3>Diagnostic</h3><p>A two-way check: what you use now, and whether we can help.</p></div>
-      <div class="stage"><span class="n">1</span><h3>AI setup</h3><p>Working sessions with your leaders, built on what the diagnostic showed.</p></div>
-      <div class="stage"><span class="n">2</span><h3>Blueprint</h3><p>Analysis with your people, ending in one design and its cost.</p></div>
-      <div class="stage"><span class="n">3</span><h3>Build</h3><p>A road test with a small group, then the build and handover.</p></div>
-      <div class="stage"><span class="n">4</span><h3>Maintenance</h3><p>Back-up once it’s running, as much or as little as you need.</p></div>
-    </div>
-    <p class="note">Each stage ends with a decision. You can stop after any of them.</p>
-  </div>
-</section>
-
 <section id="work">
   <div class="wrap">
-    <p class="eyebrow">Previous work: leaders</p>
-    <h2>Freeing leaders to lead</h2>
-    <div class="grid g3">
-      <div class="card">
-        <span class="tag">Tech scale-up</span>
-        <h3>A CEO who wanted his team to decide</h3>
-        <p>We built him a bespoke system holding the company’s know-how, so the team could find answers without him.</p>
-        <p class="changed"><b>What changed:</b> a decision framework the team uses, and a clear plan for his strategy time.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Founder, several businesses</span>
-        <h3>Systems held together by memory</h3>
-        <p>We rebuilt his thinking architecture, complemented by AI.</p>
-        <p class="changed"><b>What changed:</b> two custom AI trackers, built in hours, replaced weeks of manual work.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Legal firm</span>
-        <h3>Why won’t senior partners let go?</h3>
-        <p>We diagnosed the pattern directly from coaching sessions across the partnership.</p>
-        <p class="changed"><b>What changed:</b> a generational gap named, and a short targeted fix in place of a blanket programme.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Previous work: organisations</p>
-    <h2>Naming what is really in the way</h2>
-    <div class="grid g2">
-      <div class="card">
-        <span class="tag">Bank, Nordics</span>
-        <h3>Finding the gaps in a leadership team</h3>
-        <p>We routinely analysed leaders’ coaching conversations, then built an AI-analysed self-assessment for the wider team.</p>
-        <p class="changed"><b>What changed:</b> four drains named through a mediated process, then a self-assessment rolled out to 300+ people, showing clear strengths and weaknesses.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Energy company</span>
-        <h3>Communicating through change</h3>
-        <p>A three-hour workshop, then follow-up sessions with individual leaders.</p>
-        <p class="changed"><b>What changed:</b> staff now use a shared playbook for responding to messages and mediating change.</p>
-      </div>
+    <p class="eyebrow">Who we work with</p>
+    <h2>Our clients have included</h2>
+    <div class="grid g5 clients">
+      <div class="card"><h3>Training providers</h3></div>
+      <div class="card"><h3>Energy companies</h3></div>
+      <div class="card"><h3>Banks</h3></div>
+      <div class="card"><h3>Software companies</h3></div>
+      <div class="card"><h3>Founders and CEOs</h3></div>
     </div>
   </div>
 </section>
 
 <section id="team">
   <div class="wrap">
-    <p class="eyebrow">Who you work with</p>
+    <p class="eyebrow">Who you’ll work with</p>
     <h2>One lead, with specialists as you need them</h2>
     <div class="team">
       <div class="lead">
